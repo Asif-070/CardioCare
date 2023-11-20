@@ -3,25 +3,27 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.widget.Toolbar;
-
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.annotation.GlideModule;
+import com.bumptech.glide.module.AppGlideModule;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,63 +32,59 @@ import com.google.firebase.database.ValueEventListener;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileActivity2 extends AppCompatActivity {
 
     public static DrawerLayout drawerLayout;
     NavigationView navigationView;
-    TextView name,name2,blood,age,type,gender,phone,add;
-    Toolbar toolbar;
-    ProgressDialog progressDialog;
+    TextView name,name2,exp,age,gender,phone,visit,room,time,edu,tag;
     CircleImageView profile,pro2;
-    ImageView img;
-    FirebaseAuth mAuth;
+    Toolbar toolbar;
     DatabaseReference databaseReference;
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_profile2);
 
         name = findViewById(R.id.tieName);
-        blood = findViewById(R.id.blood);
+        exp = findViewById(R.id.exp);
         age = findViewById(R.id.age);
-        type = findViewById(R.id.type);
+        visit = findViewById(R.id.visit);
         gender = findViewById(R.id.gender);
         phone = findViewById(R.id.phone);
-        add = findViewById(R.id.address);
+        room = findViewById(R.id.room);
+        time = findViewById(R.id.time);
+        edu = findViewById(R.id.edu);
+
         profile = findViewById(R.id.imageView4);
+
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.pro_view);
+        ImageView img = findViewById(R.id.imageView3);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
         progressDialog.setCancelable(false);
 
-        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
-        String id = preferences.getString("id", "null");
-
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.pro_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Intent intent;
                 switch (item.getItemId()){
                     case R.id.nav_pro:
-                        Toast.makeText(ProfileActivity.this,"ALready in Profile",Toast.LENGTH_SHORT);
+                        Toast.makeText(ProfileActivity2.this,"ALready in Profile",Toast.LENGTH_SHORT);
                         return true;
-                    case R.id.nav_pres:
-                        intent = new Intent(ProfileActivity.this, ViewPresActivity.class);
-                        intent.putExtra("PatientID", id);
+                    case R.id.nav_note:
+                        intent = new Intent(ProfileActivity2.this, ViewNoteActivity.class);
                         startActivity(intent);
                         return true;
                     case R.id.nav_ep:
-                        intent = new Intent(ProfileActivity.this, EditActivity.class);
-                        startActivity(intent);
-                        return true;
-                    case R.id.nav_eps:
-                        intent = new Intent(ProfileActivity.this, ForgotActivity.class);
+                        Toast.makeText(ProfileActivity2.this,"Edit is Pressed",Toast.LENGTH_SHORT);
+                        intent = new Intent(ProfileActivity2.this, EditActivity2.class);
                         startActivity(intent);
                         return true;
                     case R.id.nav_lo:
-                        intent = new Intent(ProfileActivity.this, LoginActivity.class);
+                        intent = new Intent(ProfileActivity2.this, LoginActivity.class);
                         startActivity(intent);
                         finish();
                         return true;
@@ -94,48 +92,52 @@ public class ProfileActivity extends AppCompatActivity {
                 return true;
             }
         });
-        toolbar = findViewById(R.id.toolbar2);
-        img = findViewById(R.id.imageView3);
-        mAuth = FirebaseAuth.getInstance();
-
         View headerView = navigationView.getHeaderView(0);
         name2 = headerView.findViewById(R.id.sideName);
         pro2 = headerView.findViewById(R.id.propic);
+        tag = headerView.findViewById(R.id.sideTag);
 
+        toolbar = findViewById(R.id.toolbar2);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
+        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        String id = preferences.getString("id", "null");
 //        name.setText(id);
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("patient");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Doctor");
         // Retrieve user data from Firebase
         progressDialog.show();
         databaseReference.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    patient p = dataSnapshot.getValue(patient.class); // Create a User class that matches your database structure
-//                    progressDialog.dismiss();
+                    doctor p = dataSnapshot.getValue(doctor.class); // Create a User class that matches your database structure
+
                     // Update UI with user data
                     name.setText(String.valueOf(p.getName()));
                     name2.setText(String.valueOf(p.getName()));
-                    blood.setText("Blood: " + String.valueOf(p.getBt()));
+                    tag.setText("Doctor");
+                    exp.setText("Exp: " + String.valueOf(p.getExp()) + " Years");
                     age.setText("Age: " + String.valueOf(p.getAge()));
-                    type.setText("Type: " + String.valueOf(p.getType()));
+                    visit.setText("Visit: " + String.valueOf(p.getVisit()) + " TK");
                     gender.setText("Gender: " + String.valueOf(p.getGender()));
                     phone.setText("Phone: " + String.valueOf(p.getPhone()));
-                    add.setText("Address: " + String.valueOf(p.getAddress()));
-
+                    room.setText("Room: " + String.valueOf(p.getRoom()));
+                    time.setText("Time: " + String.valueOf(p.getTime()));
+                    edu.setText(String.valueOf(p.getEdu()));
+//                    profile.setImageResource(R.drawable.bgmenu);
                     // Load image using Glide
                     String imageUrl = p.getImgurl();
                     if (imageUrl != null && !imageUrl.isEmpty()) {
-                        // Load image into ImageView using Glide
-                        Glide.with(ProfileActivity.this)
+                        // Use your logic to load the image using Glide
+                        Glide.with(ProfileActivity2.this)
                                 .load(imageUrl)
-                                .placeholder(R.drawable.editprofile)
                                 .into(profile);
-                        Glide.with(ProfileActivity.this)
+                        Glide.with(ProfileActivity2.this)
                                 .load(imageUrl)
-                                .placeholder(R.drawable.editprofile)
                                 .into(pro2);
                     } else {
-                        // Use a placeholder image if no image URL is available
+                        // Use a placeholder image if the URL is empty
                         profile.setImageResource(R.drawable.editprofile);
                     }
                     progressDialog.dismiss();
@@ -147,9 +149,6 @@ public class ProfileActivity extends AppCompatActivity {
                 // Handle error
             }
         });
-
-        toolbar.setTitle("");
-        setSupportActionBar(toolbar);
 
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
@@ -164,15 +163,5 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
 
-    }
-
-    @Override
-    public void onBackPressed(){
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
-            drawerLayout.closeDrawer(GravityCompat.START);
-        }
-        else{
-            super.onBackPressed();
-        }
     }
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Displaying answers -->
+            <TextView
+                android:id="@+id/result1TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q1: " />
+
+            <TextView
+                android:id="@+id/result2TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q2: " />
+
+            <TextView
+                android:id="@+id/result3TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q3: " />
+
+            <TextView
+                android:id="@+id/result4TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q4: " />
+
+            <TextView
+                android:id="@+id/result5TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q5: " />
+
+            <TextView
+                android:id="@+id/result6TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q6: " />
+
+            <TextView
+                android:id="@+id/result7TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q7: " />
+
+            <TextView
+                android:id="@+id/result8TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q8: " />
+
+            <TextView
+                android:id="@+id/result9TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q9: " />
+
+            <TextView
+                android:id="@+id/result10TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Q10: " />
+
+            <Button
+                android:id="@+id/okbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OK" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

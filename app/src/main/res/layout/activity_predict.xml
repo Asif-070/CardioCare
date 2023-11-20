@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Question 1 -->
+        <TextView
+            android:id="@+id/question1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:text="Q1: What is patients age?"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- EditText for Question 1 -->
+        <EditText
+            android:id="@+id/answer1EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question1TextView"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="10dp"
+            android:inputType="number"/>
+
+        <!-- Question 2 -->
+        <TextView
+            android:id="@+id/question2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/answer1EditText"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:text="Q2: What is patients gender?"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- RadioGroup for Question 2 -->
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question2TextView"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for Question 1 -->
+            <RadioButton
+                android:id="@+id/option1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/option2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+        </RadioGroup>
+
+        <!-- Question 3 -->
+        <TextView
+            android:id="@+id/question3TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radioGroup1"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:text="Q3: What type of chest pain does the patient experience?"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- RadioGroup for Question 2 -->
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/question3TextView"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for Question 2 -->
+            <RadioButton
+                android:id="@+id/option1_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Typical Angina" />
+
+            <RadioButton
+                android:id="@+id/option2_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atypical Angina" />
+
+            <RadioButton
+                android:id="@+id/option3_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Non-anginal Pain" />
+
+            <RadioButton
+                android:id="@+id/option4_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Asymptomatic" />
+        </RadioGroup>
+
+        <!-- Question 4 -->
+        <TextView
+            android:id="@+id/question4TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radioGroup2"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:text="Q4: What is the resting blood pressure of the patient (in mm Hg)?"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- EditText for Question 4 -->
+        <EditText
+            android:id="@+id/answer4EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question4TextView"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="10dp"
+            android:inputType="number" />
+
+        <!-- Question 5 -->
+        <TextView
+            android:id="@+id/question5TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/answer4EditText"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:text="Q5: What is the cholesterol level of the patient (in mg/dl)?"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- EditText for Question 5 -->
+        <EditText
+            android:id="@+id/answer5EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question5TextView"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="10dp"
+            android:inputType="number"/>
+
+        <!-- Question 6 -->
+        <TextView
+            android:id="@+id/question6TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/answer5EditText"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:text="Q6: Does the patient have fasting blood sugar greater than 120 mg/dl?"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question6TextView"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/option1_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Typical Angina" />
+
+            <RadioButton
+                android:id="@+id/option2_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Atypical Angina" />
+        </RadioGroup>
+
+        <!-- Question 7 -->
+        <TextView
+            android:id="@+id/question7TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radioGroup3"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:text="Q7: What are the resting electrocardiographic results for he patient?"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question7TextView"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/option1_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Normal" />
+
+            <RadioButton
+                android:id="@+id/option2_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ST-T wave normality" />
+
+            <RadioButton
+                android:id="@+id/option3_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Left ventricular hypertrophy" />
+        </RadioGroup>
+
+        <!-- Question 8 -->
+        <TextView
+            android:id="@+id/question8TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radioGroup4"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:text="Q8: What is the maximum heart rate achieved by the patient?"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- EditText for Question 8 -->
+        <EditText
+            android:id="@+id/answer8EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question8TextView"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="10dp"
+            android:inputType="number" />
+
+        <!-- Question 9 -->
+        <TextView
+            android:id="@+id/question9TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/answer8EditText"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:text="Q9: What is the previous peak value?"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- EditText for Question 9 -->
+        <EditText
+            android:id="@+id/answer9EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question9TextView"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="10dp"
+            android:inputType="number" />
+
+        <!-- Question 10 -->
+        <TextView
+            android:id="@+id/question10TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/answer9EditText"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:text="Q10: Did the patient experience exercise-induced angina?"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- RadioGroup for Question 10 -->
+        <RadioGroup
+            android:id="@+id/radioGroup5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question10TextView"
+            android:orientation="vertical">
+
+            <!-- RadioButtons for Question 10 -->
+            <RadioButton
+                android:id="@+id/option1_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/option2_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radioGroup5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Submit" />
+
+        <TextView
+            android:id="@+id/alertTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/answer9EditText"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="10dp"
+            android:text="     "
+            android:textSize="16sp"
+            android:textColor="@color/design_default_color_error"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</ScrollView>

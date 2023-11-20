@@ -15,6 +15,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+
         c1 = findViewById(R.id.profile);
         c2 = findViewById(R.id.doctor);
         c3 = findViewById(R.id.predict);
@@ -39,7 +40,7 @@ public class MenuActivity extends AppCompatActivity {
         c3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+                Intent intent = new Intent(MenuActivity.this, PredictActivity.class);
                 startActivity(intent);
             }
         });
