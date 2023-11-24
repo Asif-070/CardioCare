@@ -1,7 +1,7 @@
 package com.example.myapplication;
 
 public class doctor {
-    String name,exp,gender,type,phone,room,time,edu,imgurl,spc,note;
+    String name,exp,gender,type,phone,room,time,edu,imgurl,spc,note,day;
     int age,visit;
 
     public doctor(String name, String exp, String gender, String type, String phone, String room, String time, String edu, String imgurl, int age, int visit) {
@@ -16,6 +16,14 @@ public class doctor {
         this.imgurl = imgurl;
         this.age = age;
         this.visit = visit;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
     }
 
     public String getNote() {

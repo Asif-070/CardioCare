@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,6 +25,7 @@ public class PatientActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     patientadapter adapter;
     DatabaseReference databaseReference;
+    SearchView searchView;
     patientlist androidData;
 
     @Override
@@ -37,16 +39,31 @@ public class PatientActivity extends AppCompatActivity {
         progressDialog.setCancelable(false); // Set if the dialog is cancelable or not
         progressDialog.show();
 
+        searchView = findViewById(R.id.searchView);
+        searchView.clearFocus();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterText(newText);
+                return true;
+            }
+        });
+
         recyclerView = findViewById(R.id.recyclerView);
         dataList = new ArrayList<>();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new patientadapter(this,dataList);
         recyclerView.setAdapter(adapter);
-//        androidData = new patientlist("Asifur Rahman", "Normal", "A+ve", R.drawable.forgot_password);
+//        androidData = new patientlist("Asifur Rahman", "Normal", "A+ve", "1", "");
 //        dataList.add(androidData);
-//        androidData = new patientlist("Arifur Rahman", "Patient", "B-ve", R.drawable.forgot_password);
+//        androidData = new patientlist("Arifur Rahman", "Patient", "B-ve", "2", "");
 //        dataList.add(androidData);
-//        androidData = new patientlist("Atikul Islam", "Serious", "O+ve", R.drawable.forgot_password);
+//        androidData = new patientlist("Atikul Islam", "Serious", "O+ve", "3", "");
 //        dataList.add(androidData);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -75,4 +92,26 @@ public class PatientActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void filterText(String text) {
+        ArrayList<patientlist> filteredList = new ArrayList<>();
+
+        for (patientlist patient : dataList) {
+            // Here, you can define your filtering logic
+            // For instance, if you want to filter by patient name
+            if (patient.getName().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(patient);
+            }
+        }
+
+        if (filteredList.isEmpty()) {
+            adapter.setSearchList(new ArrayList<>());
+//            Toast.makeText(this, "No matching results found", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            // Pass the filtered list to the adapter
+            adapter.setSearchList(filteredList);
+        }
+    }
+
 }

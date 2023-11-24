@@ -29,7 +29,7 @@ public class DoctorViewActivity extends AppCompatActivity {
     String phone2;
 
     // TextViews to display doctor information
-    private TextView name, phone, exp, age, visit, gender, room, time, about;
+    private TextView name, phone, exp, age, visit, gender, room, time, about,day;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,7 @@ public class DoctorViewActivity extends AppCompatActivity {
         visit = findViewById(R.id.visit);
         gender = findViewById(R.id.gender);
         room = findViewById(R.id.room);
+        day = findViewById(R.id.day);
         time = findViewById(R.id.time);
         about = findViewById(R.id.about);
         back = findViewById(R.id.backbtn);
@@ -67,6 +68,7 @@ public class DoctorViewActivity extends AppCompatActivity {
                     String gender2 = dataSnapshot.child("gender").getValue().toString();
                     String exp2 = dataSnapshot.child("exp").getValue().toString();
                     String room2 = dataSnapshot.child("room").getValue().toString();
+                    String day2 = dataSnapshot.child("day").getValue().toString();
                     String time2 = dataSnapshot.child("time").getValue().toString();
                     phone2 = dataSnapshot.child("phone").getValue().toString();
                     int visit2 = Integer.parseInt(dataSnapshot.child("visit").getValue().toString());
@@ -81,6 +83,7 @@ public class DoctorViewActivity extends AppCompatActivity {
                     gender.setText("Gender: " + gender2);
                     phone.setText("Phone: " + phone2);
                     room.setText("Room: " + room2);
+                    day.setText("Room: " + day2);
                     time.setText("Time: " + time2);
 
                     if (imageUrl != null && !imageUrl.isEmpty()) {

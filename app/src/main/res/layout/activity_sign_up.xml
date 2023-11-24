@@ -37,7 +37,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:contentDescription="@string/logo"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/mainicon"
                 android:layout_gravity="center_horizontal"/>
 
             <LinearLayout
@@ -95,6 +95,7 @@
                     android:layout_height="wrap_content"
                     app:errorEnabled="false"
                     style="@style/editTextStyle2"
+                    app:passwordToggleEnabled="true"
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
                     android:layout_marginTop="8dp">
@@ -119,6 +120,7 @@
                     android:layout_height="wrap_content"
                     app:errorEnabled="false"
                     style="@style/editTextStyle2"
+                    app:passwordToggleEnabled="true"
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
                     android:layout_marginTop="8dp">

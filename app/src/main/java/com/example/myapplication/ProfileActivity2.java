@@ -36,7 +36,7 @@ public class ProfileActivity2 extends AppCompatActivity {
 
     public static DrawerLayout drawerLayout;
     NavigationView navigationView;
-    TextView name,name2,exp,age,gender,phone,visit,room,time,edu,tag;
+    TextView name,name2,exp,age,gender,phone,visit,room,time,edu,tag,day;
     CircleImageView profile,pro2;
     Toolbar toolbar;
     DatabaseReference databaseReference;
@@ -53,6 +53,7 @@ public class ProfileActivity2 extends AppCompatActivity {
         gender = findViewById(R.id.gender);
         phone = findViewById(R.id.phone);
         room = findViewById(R.id.room);
+        day = findViewById(R.id.day);
         time = findViewById(R.id.time);
         edu = findViewById(R.id.edu);
 
@@ -123,6 +124,7 @@ public class ProfileActivity2 extends AppCompatActivity {
                     gender.setText("Gender: " + String.valueOf(p.getGender()));
                     phone.setText("Phone: " + String.valueOf(p.getPhone()));
                     room.setText("Room: " + String.valueOf(p.getRoom()));
+                    day.setText("Room: " + String.valueOf(p.getDay()));
                     time.setText("Time: " + String.valueOf(p.getTime()));
                     edu.setText(String.valueOf(p.getEdu()));
 //                    profile.setImageResource(R.drawable.bgmenu);

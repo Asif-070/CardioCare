@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,7 +46,7 @@ public class EditActivity extends AppCompatActivity {
         gender = findViewById(R.id.editgender);
         phone = findViewById(R.id.editphone);
         add = findViewById(R.id.editAddress);
-        img = findViewById(R.id.imageView5);
+        img = findViewById(R.id.imageView);
         updateButton = findViewById(R.id.updateButton);
         imgbtn = findViewById(R.id.chooseImageButton);
         mAuth = FirebaseAuth.getInstance();
@@ -67,6 +68,17 @@ public class EditActivity extends AppCompatActivity {
                     gender.setText(String.valueOf(p.getGender()));
                     phone.setText(String.valueOf(p.getPhone()));
                     add.setText(String.valueOf(p.getAddress()));
+                    String imageUrl = String.valueOf(p.getImgurl());
+
+                    if (imageUrl != null && !imageUrl.isEmpty()) {
+                        // Load image into ImageView using Glide
+                        Glide.with(EditActivity.this)
+                                .load(imageUrl)
+                                .into(img);
+                    } else {
+                        // Use a placeholder image if no image URL is available
+                        img.setImageResource(R.drawable.editprofile);
+                    }
                 }
             }
 
