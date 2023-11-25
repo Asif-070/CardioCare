@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -37,6 +38,7 @@ public class ProfileActivity extends AppCompatActivity {
     TextView name,name2,blood,age,type,gender,phone,add;
     Toolbar toolbar;
     ProgressDialog progressDialog;
+    CardView c1,c2,c3;
     CircleImageView profile,pro2;
     ImageView img;
     FirebaseAuth mAuth;
@@ -54,6 +56,10 @@ public class ProfileActivity extends AppCompatActivity {
         phone = findViewById(R.id.phone);
         add = findViewById(R.id.address);
         profile = findViewById(R.id.imageView4);
+
+        c1 = findViewById(R.id.bmi);
+        c2 = findViewById(R.id.ow);
+        c3 = findViewById(R.id.hi);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
@@ -160,6 +166,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+        c1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, BMIActivity.class);
+                startActivity(intent);
             }
         });
 

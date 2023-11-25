@@ -15,6 +15,24 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".FullArticleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArticleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DisCardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MedCardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EncyclopediaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BMIActivity"
+            android:exported="false" />
+        <activity
             android:name=".ForceActivity"
             android:exported="false" />
         <activity

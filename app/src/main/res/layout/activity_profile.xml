@@ -160,6 +160,7 @@
             app:layout_constraintTop_toTopOf="@+id/view">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/bmi"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_row="0"
@@ -185,6 +186,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/ow"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_row="0"
@@ -210,6 +212,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/hi"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_row="0"

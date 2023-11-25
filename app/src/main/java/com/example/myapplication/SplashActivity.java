@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the next activity here (replace MainActivity.class with your desired activity)
-//                Intent intent = new Intent(SplashActivity.this, DoctorsActivity.class);
+//                Intent intent = new Intent(SplashActivity.this, EncyclopediaActivity.class);
 //                startActivity(intent);
                 Intent intent = new Intent(SplashActivity.this, StartedActivity.class);
                 startActivity(intent);
