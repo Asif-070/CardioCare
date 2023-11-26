@@ -176,6 +176,20 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        c2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, OptimalWeightActivity.class);
+                startActivity(intent);
+            }
+        });
+        c3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, HealthInfoActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

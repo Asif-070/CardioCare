@@ -167,7 +167,7 @@
             android:textStyle="bold" />
 
         <RadioGroup
-            android:id="@+id/radioGroup3"
+            android:id="@+id/radioGroup6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/question6TextView"
@@ -177,13 +177,13 @@
                 android:id="@+id/option1_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Typical Angina" />
+                android:text="True" />
 
             <RadioButton
                 android:id="@+id/option2_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Atypical Angina" />
+                android:text="False" />
         </RadioGroup>
 
         <!-- Question 7 -->
@@ -191,98 +191,38 @@
             android:id="@+id/question7TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/radioGroup3"
+            android:layout_below="@+id/radioGroup6"
             android:layout_marginTop="16dp"
             android:layout_marginStart="10dp"
-            android:text="Q7: What are the resting electrocardiographic results for he patient?"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <RadioGroup
-            android:id="@+id/radioGroup4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/question7TextView"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/option1_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Normal" />
-
-            <RadioButton
-                android:id="@+id/option2_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ST-T wave normality" />
-
-            <RadioButton
-                android:id="@+id/option3_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Left ventricular hypertrophy" />
-        </RadioGroup>
-
-        <!-- Question 8 -->
-        <TextView
-            android:id="@+id/question8TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/radioGroup4"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="10dp"
-            android:text="Q8: What is the maximum heart rate achieved by the patient?"
+            android:text="Q7: What is the maximum heart rate achieved by the patient?"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <!-- EditText for Question 8 -->
         <EditText
-            android:id="@+id/answer8EditText"
+            android:id="@+id/answer7EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/question8TextView"
+            android:layout_below="@id/question7TextView"
             android:layout_marginTop="8dp"
             android:layout_marginStart="10dp"
             android:inputType="number" />
 
-        <!-- Question 9 -->
-        <TextView
-            android:id="@+id/question9TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/answer8EditText"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="10dp"
-            android:text="Q9: What is the previous peak value?"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <!-- EditText for Question 9 -->
-        <EditText
-            android:id="@+id/answer9EditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/question9TextView"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="10dp"
-            android:inputType="number" />
-
-        <!-- Question 10 -->
+        <!-- Question 8 -->
         <TextView
             android:id="@+id/question10TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/answer9EditText"
+            android:layout_below="@+id/answer7EditText"
             android:layout_marginTop="16dp"
             android:layout_marginStart="10dp"
-            android:text="Q10: Did the patient experience exercise-induced angina?"
+            android:text="Q8: Did the patient experience exercise-induced angina?"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <!-- RadioGroup for Question 10 -->
+        <!-- RadioGroup for Question 8 -->
         <RadioGroup
-            android:id="@+id/radioGroup5"
+            android:id="@+id/radioGroup8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/question10TextView"
@@ -306,19 +246,20 @@
             android:id="@+id/submitButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/radioGroup5"
+            android:layout_below="@id/radioGroup8"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:text="Submit" />
 
         <TextView
-            android:id="@+id/alertTitle"
+            android:id="@+id/result69"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/answer9EditText"
+            android:layout_below="@+id/submitButton"
             android:layout_marginTop="16dp"
             android:layout_marginStart="10dp"
-            android:text="     "
+            android:visibility="invisible"
+            android:text="   "
             android:textSize="16sp"
             android:textColor="@color/design_default_color_error"
             android:textStyle="bold" />

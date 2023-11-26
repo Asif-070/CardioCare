@@ -1,0 +1,62 @@
+<!-- emergency_activity.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <Button
+        android:id="@+id/btnEmergency1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency Hotline 1"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#FA3939"
+        android:drawableRight="@drawable/baseline_phone_24"
+        android:drawablePadding="8dp"/>
+
+    <Button
+        android:id="@+id/btnEmergency2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency Hotline 2"
+        android:layout_below="@id/btnEmergency1"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#FA3939"
+        android:drawableRight="@drawable/baseline_phone_24"
+        android:drawablePadding="8dp"/>
+
+    <Button
+        android:id="@+id/btnEmergency3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency Hotline 3"
+        android:layout_below="@id/btnEmergency2"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#FA3939"
+        android:drawableRight="@drawable/baseline_phone_24"
+        android:drawablePadding="8dp"/>
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#808080"
+        android:layout_below="@id/btnEmergency3"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnAmbulance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ambulance Hotline"
+        android:layout_below="@id/separator"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#FA3939"
+        android:drawableRight="@drawable/baseline_phone_24"
+        android:drawablePadding="8dp"/>
+
+</RelativeLayout>
