@@ -20,7 +20,7 @@ public class MenuActivity extends AppCompatActivity {
         c2 = findViewById(R.id.doctor);
         c3 = findViewById(R.id.predict);
         c4 = findViewById(R.id.hotline);
-//        c5 = findViewById(R.id.predict);
+        c5 = findViewById(R.id.ambulance);
         c6 = findViewById(R.id.info);
 
         c1.setOnClickListener(new View.OnClickListener() {
@@ -51,17 +51,17 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        c5.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MenuActivity.this, MainActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        c5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, AmbulanceActivity.class);
+                startActivity(intent);
+            }
+        });
         c6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, InfoActivity.class);
+                Intent intent = new Intent(MenuActivity.this, FAQActivity.class);
                 startActivity(intent);
             }
         });

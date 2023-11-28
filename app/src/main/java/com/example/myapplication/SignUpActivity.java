@@ -87,7 +87,7 @@ public class SignUpActivity extends AppCompatActivity {
                     if(task.isSuccessful()){
                         FirebaseUser firebaseUser = mAuth.getCurrentUser();
                         if (firebaseUser != null) {
-                            patient p = new patient(modifiedEmail, name, "...", "...", "...", "...", "...", "...", 0, "");
+                            patient p = new patient(modifiedEmail, name, email, "...", "...", "...", "...", "...", "...", 0, "");
                             userref.child(modifiedEmail).setValue(p);
                             pd.dismiss();
                             Intent intent = new Intent(SignUpActivity.this, ConfirmActivity.class);

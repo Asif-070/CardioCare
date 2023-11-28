@@ -1,16 +1,17 @@
 package com.example.myapplication;
 
 public class patient {
-    String id,name,bt,gender,type,phone,address,imgurl;
+    String id,name,email,bt,gender,type,phone,address,imgurl;
     int age;
     String pres;
 
     public patient() {
     }
 
-    public patient(String id, String name, String bt, String gender, String type, String phone, String address, String imgurl, int age, String pres) {
+    public patient(String id, String name, String email, String bt, String gender, String type, String phone, String address, String imgurl, int age, String pres) {
         this.id = id;
         this.name = name;
+        this.email = email;
         this.bt = bt;
         this.gender = gender;
         this.type = type;
@@ -19,6 +20,14 @@ public class patient {
         this.imgurl = imgurl;
         this.age = age;
         this.pres = pres;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getId() {

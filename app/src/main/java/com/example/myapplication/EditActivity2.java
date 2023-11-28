@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class EditActivity2 extends AppCompatActivity {
 
-    TextView edu,exp,gender,phone,age;
+    TextView edu,exp,gender,age;
     Button updateButton;
     DatabaseReference databaseReference;
     FirebaseAuth mAuth;
@@ -32,7 +32,6 @@ public class EditActivity2 extends AppCompatActivity {
         edu = findViewById(R.id.edu);
         exp = findViewById(R.id.exp);
         gender = findViewById(R.id.editgender);
-        phone = findViewById(R.id.editphone);
         age = findViewById(R.id.editage);
         updateButton = findViewById(R.id.updateButton);
         mAuth = FirebaseAuth.getInstance();
@@ -50,7 +49,6 @@ public class EditActivity2 extends AppCompatActivity {
                     edu.setText(String.valueOf(p.getEdu()));
                     exp.setText(String.valueOf(p.getExp()));
                     gender.setText(String.valueOf(p.getGender()));
-                    phone.setText(String.valueOf(p.getPhone()));
                     age.setText(String.valueOf(p.getAge()));
                 }
             }
@@ -73,7 +71,6 @@ public class EditActivity2 extends AppCompatActivity {
         // Update the user profile in Firebase
         databaseReference.child("edu").setValue(edu.getText().toString());
         databaseReference.child("gender").setValue(gender.getText().toString());
-        databaseReference.child("phone").setValue(phone.getText().toString());
         databaseReference.child("exp").setValue(exp.getText().toString());
         databaseReference.child("age").setValue(Integer.parseInt(age.getText().toString()));
 

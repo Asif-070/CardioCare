@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -25,9 +26,10 @@ import java.util.Locale;
 
 public class AddPresActivity extends AppCompatActivity {
 
-    DatabaseReference databaseReference,dref;
+    DatabaseReference databaseReference,dref,dref2;
     TextView t1,t2,t3;
     Button add,back;
+    String email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +75,10 @@ public class AddPresActivity extends AppCompatActivity {
                 .child("patient")
                 .child(patientID)
                 .child("pres");
+        dref2 = FirebaseDatabase.getInstance().getReference()
+                .child("patient")
+                .child(patientID)
+                .child("email");
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +87,17 @@ public class AddPresActivity extends AppCompatActivity {
                 String prescription = t2.getText().toString();
                 String doctor = t3.getText().toString();
 
+                dref2.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        email = dataSnapshot.getValue(String.class);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Handle potential errors
+                    }
+                });
                 // Read existing prescription data from Firebase
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -102,6 +119,17 @@ public class AddPresActivity extends AppCompatActivity {
                                     public void onSuccess(Void aVoid) {
                                         // Data successfully updated
                                         Toast.makeText(AddPresActivity.this, "Prescription added successfully", Toast.LENGTH_SHORT).show();
+                                        String[] recipients = { email };
+                                        String subject = "Prescription Added";
+                                        String messege = "Your prescription has been added. Please check- \n\n" + "Date: " + date + ":\n" + prescription + "\n" + "(By " + doctor + ")\n";
+
+                                        Intent intent = new Intent(Intent.ACTION_SEND);
+                                        intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+                                        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+                                        intent.putExtra(Intent.EXTRA_TEXT, messege);
+
+                                        intent.setType("message/rfc822");
+                                        startActivity(Intent.createChooser(intent,"Choose an email client"));
                                         finish();
                                     }
                                 })
@@ -129,7 +157,6 @@ public class AddPresActivity extends AppCompatActivity {
                 finish(); // Finish the current activity
             }
         });
-
 
     }
 }

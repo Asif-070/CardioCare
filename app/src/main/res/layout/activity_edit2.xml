@@ -32,18 +32,10 @@
         android:hint="Gender"/>
 
     <EditText
-        android:id="@+id/editphone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editgender"
-        android:layout_marginTop="16dp"
-        android:hint="Phone no."/>
-
-    <EditText
         android:id="@+id/editage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editphone"
+        android:layout_below="@+id/editgender"
         android:layout_marginTop="16dp"
         android:inputType="number"
         android:hint="Age"/>
