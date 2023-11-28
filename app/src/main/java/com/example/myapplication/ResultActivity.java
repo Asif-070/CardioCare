@@ -31,7 +31,7 @@ public class ResultActivity extends AppCompatActivity {
         float p = Float.parseFloat(res);
         p = p*100;
         String tmp = String.format("%.2f", p);
-        per.setText(tmp + "%");
+        per.setText("Heart disease probability: "+tmp + "%");
 
         if(p>=85){
             ver.setText("Go to Doctor Immediately");
