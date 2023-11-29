@@ -32,14 +32,13 @@
         android:id="@+id/btnEmergency1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Emergency Hotline 2"
         android:layout_below="@id/ambulance_pic_1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="86dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
         android:backgroundTint="#CD0808"
         android:drawableRight="@drawable/baseline_phone_24"
-        android:drawablePadding="8dp"
-        android:text="Emergency Hotline 1" />
+        android:drawablePadding="8dp"/>
 
     <Button
         android:id="@+id/btnEmergency2"
@@ -76,14 +75,16 @@
     <Button
         android:id="@+id/btnAmbulance"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ambulance Hotline"
+        android:layout_height="60dp"
+        android:textSize="17dp"
+        android:textStyle="bold"
         android:layout_below="@id/separator"
-        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#E33E0A"
-        android:drawableRight="@drawable/baseline_phone_24"
-        android:drawablePadding="8dp"/>
+        android:drawableRight="@drawable/ambicon"
+        android:drawablePadding="8dp"
+        android:text="Ambulance Hotline" />
 
 
 </RelativeLayout>

@@ -57,7 +57,7 @@ public class AmbulanceActivity extends AppCompatActivity {
                     String name = snapshot.child("name").getValue(String.class);
                     String phone = snapshot.child("phone").getValue(String.class);
 
-                    items.add(new amb_items(name, phone));
+                    items.add(new amb_items("Company: " + name, "Contact: " + phone));
                 }
 
                 adapter.notifyDataSetChanged(); // Notify adapter of data change
