@@ -67,7 +67,7 @@ public class PatientViewActivity extends AppCompatActivity {
 
                     // Set the fetched data to TextViews
                     name.setText(name2);
-                    type.setText("Type: " + type2);
+                    type.setText("Prev Surgery: " + type2);
                     age.setText("Age: " + age2);
                     blood.setText("Blood: " + blood2);
                     gender.setText("Gender: " + gender2);
