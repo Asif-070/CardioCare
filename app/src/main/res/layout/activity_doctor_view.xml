@@ -225,14 +225,14 @@
                     app:layout_constraintBottom_toTopOf="@+id/view"
                     app:layout_constraintStart_toEndOf="@+id/imageView4" />
 
-                <Button
+                <ImageView
                     android:id="@+id/callbtn"
-                    android:layout_width="64dp"
-                    android:layout_height="50dp"
+                    android:layout_width="86dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="right|center_vertical"
-                    android:layout_marginEnd="20dp"
-                    android:background="@android:color/transparent"
-                    android:drawableLeft="@drawable/call" />
+                    app:srcCompat="@drawable/call" />
+
+
 
 
             </androidx.cardview.widget.CardView>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,7 +25,7 @@ public class DoctorViewActivity extends AppCompatActivity {
 
     private DatabaseReference databaseReference;
     CircleImageView profile;
-    Button call;
+    ImageView call;
     ImageView back;
     String phone2;
 
@@ -105,6 +106,23 @@ public class DoctorViewActivity extends AppCompatActivity {
             }
         });
 
+        call.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Action when pressed
+                        call.setImageResource(R.drawable.call2);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        // Action when released
+                        call.setImageResource(R.drawable.call);
+                        break;
+                }
+                return false;
+
+            }
+        });
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
