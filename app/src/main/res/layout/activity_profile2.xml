@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/pro_view"
-        app:headerLayout="@layout/profile_header"
+        app:headerLayout="@layout/profile_header2"
         app:menu="@menu/pro2_menu"
         android:layout_gravity="start"
         >

@@ -119,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
             modifiedEmail = modifiedEmail.substring(0, modifiedEmail.length() - 3);
 
             DatabaseReference dref = FirebaseDatabase.getInstance().getReference("Doctor");
-            Query checkUserDatabase = dref.orderByChild("email").equalTo(modifiedEmail);
+            Query checkUserDatabase = dref.orderByChild("id").equalTo(modifiedEmail);
 
             checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override

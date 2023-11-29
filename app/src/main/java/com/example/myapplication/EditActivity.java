@@ -86,10 +86,8 @@ public class EditActivity extends AppCompatActivity {
                         // Load image into ImageView using Glide
                         Glide.with(EditActivity.this)
                                 .load(imageUrl)
+                                .placeholder(R.drawable.empty)
                                 .into(img);
-                    } else {
-                        // Use a placeholder image if no image URL is available
-                        img.setImageResource(R.drawable.editprofile);
                     }
                 }
             }
@@ -124,7 +122,10 @@ public class EditActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
             imguri = data.getData();
-            img.setImageURI(imguri);
+            Glide.with(EditActivity.this)
+                    .load(imguri)
+                    .placeholder(R.drawable.empty) // Use placeholder if image loading fails
+                    .into(img);
         }
         else {
             Toast.makeText(EditActivity.this, "No Image Selected", Toast.LENGTH_SHORT).show();
