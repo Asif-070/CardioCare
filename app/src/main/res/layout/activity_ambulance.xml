@@ -6,10 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".AmbulanceActivity">
 
+
+
+    <!-- Image View -->
+    <ImageView
+        android:id="@+id/ambulence_pic_1"
+        android:paddingTop="10dp"
+        android:layout_width="400dp"
+        android:layout_height="350dp"
+        android:src="@drawable/ambulence_pic_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_height="400dp"
         android:paddingLeft="50dp"
         android:paddingRight="20dp"
         android:paddingTop="50dp"
@@ -17,5 +33,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ambulence_pic_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

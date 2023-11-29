@@ -28,7 +28,7 @@
 
             <ImageView
                 android:layout_width="400dp"
-                android:layout_height="450dp"
+                android:layout_height="400dp"
                 android:src="@drawable/heart_output" />
 
             <TextView

@@ -6,7 +6,9 @@
     android:orientation="horizontal">
 
     <!-- Vertical LinearLayout for TextViews -->
+
     <LinearLayout
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"

@@ -14,17 +14,32 @@
         <!-- EditText for Question 1 -->
 
         <TextView
-            android:id="@+id/question1TextView"
+            android:id="@+id/heading1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="30dp"
+            android:textColor="#DA3024"
+            android:layout_centerHorizontal="true"
+            android:text="Input for ML model"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/question1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heading1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/black"
             android:text="Q1: What is patients age?"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/answer1EditText"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/question1TextView"
@@ -35,6 +50,7 @@
         <!-- Question 2 -->
         <TextView
             android:id="@+id/question2TextView"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/answer1EditText"
@@ -69,6 +85,7 @@
         <!-- Question 3 -->
         <TextView
             android:id="@+id/question3TextView"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/radioGroup1"
@@ -115,6 +132,7 @@
         <!-- Question 4 -->
         <TextView
             android:id="@+id/question4TextView"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/radioGroup2"
@@ -137,6 +155,7 @@
         <!-- Question 5 -->
         <TextView
             android:id="@+id/question5TextView"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/answer4EditText"
@@ -159,6 +178,7 @@
         <!-- Question 6 -->
         <TextView
             android:id="@+id/question6TextView"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/answer5EditText"
@@ -191,6 +211,7 @@
         <!-- Question 7 -->
         <TextView
             android:id="@+id/question7TextView"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/radioGroup6"
@@ -213,6 +234,7 @@
         <!-- Question 8 -->
         <TextView
             android:id="@+id/question10TextView"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/answer7EditText"
@@ -251,7 +273,10 @@
             android:layout_below="@id/radioGroup8"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:text="Submit" />
+
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="Show Result" />
 
         <TextView
             android:id="@+id/result69"
