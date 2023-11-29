@@ -76,7 +76,7 @@
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="20dp"
             android:layout_marginBottom="48dp"
             android:maxWidth="350dp"
             android:text="Address: ........"
@@ -87,35 +87,34 @@
 
         <TextView
             android:id="@+id/type"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="220dp"
+            android:layout_marginEnd="15dp"
             android:layout_marginBottom="152dp"
-            android:maxWidth="160dp"
-            android:text="Type: ..."
+            android:text="Prev Surgery: Yes"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/view"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/age"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="220dp"
-            android:layout_marginBottom="208dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="205dp"
             android:maxWidth="160dp"
             android:text="Age: ..."
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/view"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="20dp"
             android:layout_marginBottom="152dp"
             android:maxWidth="160dp"
             android:text="Gender: ..."
@@ -128,8 +127,8 @@
             android:id="@+id/blood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="208dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="205dp"
             android:maxWidth="160dp"
             android:text="Blood: ..."
             android:textSize="20sp"
@@ -141,7 +140,7 @@
             android:id="@+id/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="20dp"
             android:layout_marginBottom="100dp"
             android:maxWidth="350dp"
             android:text="Phone: ........."

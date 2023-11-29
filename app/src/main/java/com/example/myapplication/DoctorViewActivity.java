@@ -77,13 +77,13 @@ public class DoctorViewActivity extends AppCompatActivity {
                     // Set the fetched data to TextViews
                     name.setText(name2);
                     about.setText("About " + name2 + ":");
-                    exp.setText("Experience: " + exp2 + " Years");
+                    exp.setText("Exp: " + exp2 + " Years");
                     age.setText("Age: " + age2);
                     visit.setText("Visit: " + visit2 + " TK");
                     gender.setText("Gender: " + gender2);
                     phone.setText("Phone: " + phone2);
                     room.setText("Room: " + room2);
-                    day.setText("Room: " + day2);
+                    day.setText("Day: " + day2);
                     time.setText("Time: " + time2);
 
                     if (imageUrl != null && !imageUrl.isEmpty()) {

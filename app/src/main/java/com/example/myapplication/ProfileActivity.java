@@ -123,7 +123,7 @@ public class ProfileActivity extends AppCompatActivity {
                     name2.setText(String.valueOf(p.getName()));
                     blood.setText("Blood: " + String.valueOf(p.getBt()));
                     age.setText("Age: " + String.valueOf(p.getAge()));
-                    type.setText("Type: " + String.valueOf(p.getType()));
+                    type.setText("Prev Surgery: " + String.valueOf(p.getType()));
                     gender.setText("Gender: " + String.valueOf(p.getGender()));
                     phone.setText("Phone: " + String.valueOf(p.getPhone()));
                     add.setText("Address: " + String.valueOf(p.getAddress()));

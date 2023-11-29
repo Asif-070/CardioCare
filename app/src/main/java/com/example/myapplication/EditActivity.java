@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,8 +28,10 @@ import com.google.firebase.storage.StorageReference;
 
 public class EditActivity extends AppCompatActivity {
 
-    TextView blood,age,type,gender,phone,add;
+    TextView blood,age,gender,phone,add;
     Button updateButton,imgbtn;
+    RadioGroup radioGroup;
+    RadioButton r1,r2;
     ImageView img;
     Uri imguri;
     DatabaseReference databaseReference;
@@ -42,7 +46,9 @@ public class EditActivity extends AppCompatActivity {
 
         blood = findViewById(R.id.editBlood);
         age = findViewById(R.id.editage);
-        type = findViewById(R.id.edittype);
+        radioGroup = findViewById(R.id.radioGroup1);
+        r1 = findViewById(R.id.option1_1);
+        r2 = findViewById(R.id.option2_1);
         gender = findViewById(R.id.editgender);
         phone = findViewById(R.id.editphone);
         add = findViewById(R.id.editAddress);
@@ -64,7 +70,13 @@ public class EditActivity extends AppCompatActivity {
                     // Update UI with user data
                     blood.setText(String.valueOf(p.getBt()));
                     age.setText(String.valueOf(p.getAge()));
-                    type.setText(String.valueOf(p.getType()));
+                    String tmp = String.valueOf(p.getType());
+                    if(tmp.equals("Yes")){
+                        r1.setChecked(true);
+                    }
+                    else if (tmp.equals("No")) {
+                        r2.setChecked(true);
+                    }
                     gender.setText(String.valueOf(p.getGender()));
                     phone.setText(String.valueOf(p.getPhone()));
                     add.setText(String.valueOf(p.getAddress()));
@@ -120,12 +132,15 @@ public class EditActivity extends AppCompatActivity {
     }
 
     private void updateProfile() {
+        int selectedRadioId1 = radioGroup.getCheckedRadioButtonId();
+        RadioButton selectedRadio1 = findViewById(selectedRadioId1);
+        String answer = (selectedRadio1 != null) ? selectedRadio1.getText().toString() : "";
         // Update the user profile in Firebase
         databaseReference.child("bt").setValue(blood.getText().toString());
         databaseReference.child("age").setValue(Integer.parseInt(age.getText().toString()));
         databaseReference.child("gender").setValue(gender.getText().toString());
         databaseReference.child("phone").setValue(phone.getText().toString());
-        databaseReference.child("type").setValue(type.getText().toString());
+        databaseReference.child("type").setValue(answer);
         databaseReference.child("address").setValue(add.getText().toString());
 
         // Check if an image is selected

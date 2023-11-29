@@ -220,7 +220,7 @@
                     android:layout_weight="1"
                     android:maxWidth="220dp"
                     android:text="Phone: +000000000000"
-                    android:textSize="25sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/view"
                     app:layout_constraintStart_toEndOf="@+id/imageView4" />

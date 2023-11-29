@@ -40,19 +40,43 @@
         android:layout_marginTop="16dp"
         android:hint="Age"/>
 
-    <EditText
-        android:id="@+id/edittype"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editage"
-        android:layout_marginTop="16dp"
-        android:hint="Type"/>
+        <TextView
+            android:id="@+id/questionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editage"
+            android:layout_marginTop="16dp"
+            android:text="Prev Surgery: "
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="50dp"
+            android:layout_below="@id/questionTextView"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/option1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/option2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+        </RadioGroup>
 
     <EditText
         android:id="@+id/editgender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edittype"
+        android:layout_below="@+id/radioGroup1"
         android:layout_marginTop="16dp"
         android:hint="Gender"/>
 
@@ -80,7 +104,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/baseline_man_4_24"
+        android:src="@drawable/empty"
         android:minWidth="250dp"
         android:minHeight="250dp"
         android:maxWidth="400dp"
