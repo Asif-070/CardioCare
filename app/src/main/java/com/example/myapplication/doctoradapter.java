@@ -43,8 +43,8 @@ public class doctoradapter extends RecyclerView.Adapter<doctoradapter.ViewHolder
         String imageUrl = dataList.get(position).getImgurl();
         holder.recName.setText(dataList.get(position).getName());
         holder.recSpc.setText(dataList.get(position).getSpc());
-        holder.recExp.setText(dataList.get(position).getExp() + " Years");
-        holder.recFee.setText(String.valueOf(dataList.get(position).getVisit()) + " TK");
+        holder.recExp.setText("Exp: " + dataList.get(position).getExp() + " Years");
+        holder.recFee.setText("Visit: " + String.valueOf(dataList.get(position).getVisit()) + " TK");
         holder.recId.setText(dataList.get(position).getId());
         Glide.with(context)
                 .load(imageUrl)

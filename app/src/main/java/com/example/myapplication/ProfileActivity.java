@@ -83,6 +83,11 @@ public class ProfileActivity extends AppCompatActivity {
                         intent.putExtra("PatientID", id);
                         startActivity(intent);
                         return true;
+                    case R.id.nav_app:
+                        intent = new Intent(ProfileActivity.this, AppointActivity.class);
+                        intent.putExtra("PatientID", id);
+                        startActivity(intent);
+                        return true;
                     case R.id.nav_ep:
                         intent = new Intent(ProfileActivity.this, EditActivity.class);
                         startActivity(intent);

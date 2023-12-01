@@ -16,7 +16,10 @@
             android:icon="@drawable/prescription"
             android:title="Prescription"/>
 
-
+        <item
+            android:id="@+id/nav_app"
+            android:icon="@drawable/app"
+            android:title="Appointment"/>
 
     </group>
 
