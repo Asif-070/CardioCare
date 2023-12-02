@@ -32,12 +32,13 @@ public class AppointActivity2 extends AppCompatActivity {
 
     RecyclerView recyclerView;
     ProgressDialog progressDialog;
-    TextView edit;
+    TextView edit,count;
     app_adapter2 adapter;
     List<app_item2> items = new ArrayList<app_item2>();
     Button btn;
     DatabaseReference databaseReference;
     String docid;
+    int x=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +59,7 @@ public class AppointActivity2 extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         edit = findViewById(R.id.pedit);
         edit.setText("Patient(" + systemDate + ")");
+        count = findViewById(R.id.count);
         adapter = new app_adapter2(this, items);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -77,11 +79,13 @@ public class AppointActivity2 extends AppCompatActivity {
                     if (doctorID != null && doctorID.equals(docid)) {
                         // If both doctor ID and date match, add the item to the list
                         items.add(new app_item2(pname, gender));
+                        x++;
                     }
                 }
 
                 adapter.notifyDataSetChanged(); // Notify adapter of data change
                 progressDialog.dismiss();
+                count.setText("Total Patient Today: " + x);
             }
 
             @Override

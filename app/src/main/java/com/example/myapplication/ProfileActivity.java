@@ -97,10 +97,18 @@ public class ProfileActivity extends AppCompatActivity {
                         startActivity(intent);
                         return true;
                     case R.id.nav_lo:
+                        // Clear the stored preference (log out)
+                        SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.remove("id"); // Remove the stored email or identifier
+                        editor.apply();
+
+                        // Proceed to the LoginActivity
                         intent = new Intent(ProfileActivity.this, LoginActivity.class);
                         startActivity(intent);
                         finish();
                         return true;
+
                 }
                 return true;
             }

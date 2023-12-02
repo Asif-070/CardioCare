@@ -117,6 +117,12 @@ public class LoginActivity extends AppCompatActivity {
 
             modifiedEmail = email.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
             modifiedEmail = modifiedEmail.substring(0, modifiedEmail.length() - 3);
+            // Storing user information in SharedPreferences after successful login
+            SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("id", modifiedEmail);
+            editor.putInt("type", 2);
+            editor.apply();
 
             DatabaseReference dref = FirebaseDatabase.getInstance().getReference("Doctor");
             Query checkUserDatabase = dref.orderByChild("id").equalTo(modifiedEmail);
@@ -181,9 +187,17 @@ public class LoginActivity extends AppCompatActivity {
             pd.setCanceledOnTouchOutside(false);
             pd.show();
 
-
             modifiedEmail = email.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
             modifiedEmail = modifiedEmail.substring(0, modifiedEmail.length() - 3);
+            // Storing user information in SharedPreferences after successful login
+            SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("id", modifiedEmail);
+            editor.putInt("type", 1);
+            editor.apply();
+
+
+
             mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {

@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -18,12 +19,28 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                // Start the next activity here (replace MainActivity.class with your desired activity)
-//                Intent intent = new Intent(SplashActivity.this, EmergencyActivity.class);
-//                startActivity(intent);
-                Intent intent = new Intent(SplashActivity.this, StartedActivity.class);
-                startActivity(intent);
-                finish(); // Finish this activity to prevent the user from going back
+
+                SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+                String storedEmail = preferences.getString("id", "");
+                int value = preferences.getInt("type", 0);
+
+                if (!storedEmail.isEmpty() && value == 1) {
+                    // User is already logged in, proceed to MenuActivity directly
+                    Intent intent = new Intent(SplashActivity.this, MenuActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else if (!storedEmail.isEmpty() && value == 2) {
+                    // User is already logged in, proceed to MenuActivity directly
+                    Intent intent = new Intent(SplashActivity.this, MenuActivity2.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else {
+                    Intent intent = new Intent(SplashActivity.this, StartedActivity.class);
+                    startActivity(intent);
+                    finish(); // Finish this activity to prevent the user from going back
+                }
             }
         }, SPLASH_DELAY);
     }
