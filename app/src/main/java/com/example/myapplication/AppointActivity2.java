@@ -86,6 +86,7 @@ public class AppointActivity2 extends AppCompatActivity {
                 adapter.notifyDataSetChanged(); // Notify adapter of data change
                 progressDialog.dismiss();
                 count.setText("Total Patient Today: " + x);
+                x = 0;
             }
 
             @Override
