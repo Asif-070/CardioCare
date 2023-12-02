@@ -114,7 +114,7 @@ public class ChatActivity extends AppCompatActivity {
 
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/chat/completions")
-                .header("Authorization","Bearer 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")
+                .header("Authorization","Bearer key")
                 .post(body)
                 .build();
 
@@ -145,10 +145,6 @@ public class ChatActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
 
     }
 
