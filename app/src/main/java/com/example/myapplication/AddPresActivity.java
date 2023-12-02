@@ -107,9 +107,9 @@ public class AddPresActivity extends AppCompatActivity {
                         // Append new prescription data to existing data
                         String newPrescription;
                         if (existingPrescription != null && !existingPrescription.isEmpty()) {
-                            newPrescription = "Date: " + date + ":\n" + prescription + "\n" + "(By " + doctor + ")\n ------------------------------- \n\n" + existingPrescription;
+                            newPrescription = "Date: " + date + ":\n" + prescription + "\n\n" + "(By " + doctor + ")\n -------------------------------------------------------------- \n\n" + existingPrescription;
                         } else {
-                            newPrescription = "Date: " + date + ":\n" + prescription + "\n" + "(By " + doctor + ")\n";
+                            newPrescription = "Date: " + date + ":\n" + prescription + "\n\n" + "(By " + doctor + ")\n";
                         }
 
                         // Update the prescription data in Firebase

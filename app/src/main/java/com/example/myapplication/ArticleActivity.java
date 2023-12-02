@@ -18,6 +18,7 @@ public class ArticleActivity extends AppCompatActivity {
         TextView art3 = findViewById(R.id.art3);
         TextView art4 = findViewById(R.id.art4);
         TextView art5 = findViewById(R.id.art5);
+        TextView art6 = findViewById(R.id.art6);
 
         // Set click listeners for the art TextViews
         art1.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +53,13 @@ public class ArticleActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openFullArticleActivity(5); // Send 5 for art5
+            }
+        });
+
+        art6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFullArticleActivity(6); // Send 5 for art5
             }
         });
     }

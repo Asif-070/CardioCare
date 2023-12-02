@@ -132,7 +132,7 @@ public class ProfileActivity2 extends AppCompatActivity {
                     gender.setText("Gender: " + String.valueOf(p.getGender()));
                     phone.setText("Phone: " + String.valueOf(p.getPhone()));
                     room.setText("Room: " + String.valueOf(p.getRoom()));
-                    day.setText("Room: " + String.valueOf(p.getDay()));
+                    day.setText("Day: " + String.valueOf(p.getDay()));
                     time.setText("Time: " + String.valueOf(p.getTime()));
                     edu.setText(String.valueOf(p.getEdu()));
 //                    profile.setImageResource(R.drawable.bgmenu);

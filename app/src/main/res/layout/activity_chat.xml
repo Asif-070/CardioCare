@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        android:text="Medibot"
+        android:text="AI Chatbot"
         android:textColor="#EA400B"
         android:textSize="30sp"
         android:textStyle="bold" />

@@ -52,7 +52,7 @@ public class StartedActivity extends AppCompatActivity {
 
         if(x==0){
             x++;
-            textView.setText("Something 1");
+            textView.setText("Welcome to CardioCare");
             imageView.setImageResource(R.drawable.sp2);
         }
         else if(x==1){
@@ -61,9 +61,9 @@ public class StartedActivity extends AppCompatActivity {
             params.width = 560; // Replace with the desired width
             myButton.setLayoutParams(params);
 
-            textView.setText("Something 2");
+            textView.setText("Take charge of your heart with professional guidance.");
             imageView.setImageResource(R.drawable.s1);
-            myButton.setText("Get Started");
+            myButton.setText("Let's Get Started");
         }
         else{
             Intent intent = new Intent(StartedActivity.this, LoginActivity.class);

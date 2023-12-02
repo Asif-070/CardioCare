@@ -108,25 +108,25 @@
                 android:id="@+id/option1_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Typical Angina" />
+                android:text="Typical(Pain may feel like indigestion or gas)" />
 
             <RadioButton
                 android:id="@+id/option2_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Atypical Angina" />
+                android:text="Atypical(Unexpected pain that occurs during physical activity)" />
 
             <RadioButton
                 android:id="@+id/option3_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Non-anginal Pain" />
+                android:text="Non-anginal Pain(Pain not in the heart's near vicinity)" />
 
             <RadioButton
                 android:id="@+id/option4_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Asymptomatic" />
+                android:text="Asymptomatic(No pain or visible symptoms)" />
         </RadioGroup>
 
         <!-- Question 4 -->
@@ -138,7 +138,7 @@
             android:layout_below="@+id/radioGroup2"
             android:layout_marginTop="16dp"
             android:layout_marginStart="10dp"
-            android:text="Q4: What is the resting blood pressure of the patient (in mm Hg)?"
+            android:text="Q4: What is the resting blood pressure (Systolic) of the patient (in mm Hg)?"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -172,6 +172,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/question5TextView"
             android:layout_marginTop="8dp"
+            android:hint="120-600 mg/dl"
             android:layout_marginStart="10dp"
             android:inputType="number"/>
 
@@ -184,7 +185,7 @@
             android:layout_below="@id/answer5EditText"
             android:layout_marginTop="16dp"
             android:layout_marginStart="10dp"
-            android:text="Q6: Does the patient have fasting blood sugar greater than 120 mg/dl?"
+            android:text="Q6: Does the patient have fasting blood sugar greater than 6.7 mmol/L?"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -240,7 +241,7 @@
             android:layout_below="@+id/answer7EditText"
             android:layout_marginTop="16dp"
             android:layout_marginStart="10dp"
-            android:text="Q8: Did the patient experience exercise-induced angina?"
+            android:text="Q8: Did the patient experience chest pain during exercise?"
             android:textSize="20sp"
             android:textStyle="bold" />
 

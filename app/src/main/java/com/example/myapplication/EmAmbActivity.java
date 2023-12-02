@@ -39,6 +39,7 @@ public class EmAmbActivity extends AppCompatActivity {
     double latitude, longitude;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 100;
     private TextView locationTextView;
+    Button callButton,generateLinkButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +47,8 @@ public class EmAmbActivity extends AppCompatActivity {
 
         locationTextView = findViewById(R.id.locationTextView);
         Button getLocationButton = findViewById(R.id.getLocationButton);
-        Button generateLinkButton = findViewById(R.id.generateLinkButton);
-        Button callButton = findViewById(R.id.callButton);
+        generateLinkButton = findViewById(R.id.generateLinkButton);
+        callButton = findViewById(R.id.callButton);
         generateLinkButton.setEnabled(false);
         callButton.setEnabled(false);
 
@@ -55,8 +56,6 @@ public class EmAmbActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 getLocation();
-                generateLinkButton.setEnabled(true);
-                callButton.setEnabled(true);
             }
         });
 
@@ -104,8 +103,8 @@ public class EmAmbActivity extends AppCompatActivity {
         // Check if location services are enabled
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Fetching Current Address...");
-        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Fetching Current Address...\nIt may take a while.");
+        progressDialog.setCancelable(true);
         progressDialog.show();
         if (locationManager != null && locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             try {
@@ -130,6 +129,8 @@ public class EmAmbActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         progressDialog.dismiss();
+                        generateLinkButton.setEnabled(true);
+                        callButton.setEnabled(true);
                     }
 
                     // Other overridden methods of LocationListener (onProviderEnabled, onStatusChanged)...
@@ -139,6 +140,7 @@ public class EmAmbActivity extends AppCompatActivity {
                 e.printStackTrace();
                 progressDialog.dismiss();
             }
+
         } else {
             Toast.makeText(this, "Please enable GPS", Toast.LENGTH_SHORT).show();
         }
