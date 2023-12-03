@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="Find Best Doctors"
+        android:textAlignment="center"
         android:textColor="#28A0D8"
         android:textSize="35dp"
         android:textStyle="bold"

@@ -64,10 +64,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Website 1"
-                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="dghs.gov.bd"
                     android:textColor="@android:color/black"
-                    android:gravity="center"/>
+                    android:textSize="18sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -102,10 +102,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Website 1"
-                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="everydayhealth"
                     android:textColor="@android:color/black"
-                    android:gravity="center"/>
+                    android:textSize="18sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -140,10 +140,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Website 1"
-                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="sharingwisdoms"
                     android:textColor="@android:color/black"
-                    android:gravity="center"/>
+                    android:textSize="18sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -178,10 +178,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Website 1"
-                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="healthinfobd"
                     android:textColor="@android:color/black"
-                    android:gravity="center"/>
+                    android:textSize="18sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -216,10 +216,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Website 1"
-                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="thehealthsite"
                     android:textColor="@android:color/black"
-                    android:gravity="center"/>
+                    android:textSize="18sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -254,10 +254,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Website 1"
-                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="medicalnews"
                     android:textColor="@android:color/black"
-                    android:gravity="center"/>
+                    android:textSize="18sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
